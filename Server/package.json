@@ -1,0 +1,23 @@
+{
+  "name": "tetris_in_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noecrespi/Tetris_in_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noecrespi/Tetris_in_web/issues"
+  },
+  "homepage": "https://github.com/noecrespi/Tetris_in_web#readme",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  }
+}
