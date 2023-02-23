@@ -228,23 +228,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function gameOver() {
         if (current.some(index => squares[currentPosition + index].classList.contains('block2'))) {
             console.log(score)
+            let name = prompt('Game Over, ingrese su nombre para guardar la partida')
+            console.log(name)
 
-            // // Añadir el usuario y el puntaje a la base de datos
-            // let name = document.getElementById('name').value
-            // const URL = 'http://localhost:3000/users'
+            // Añadir el usuario y el puntaje a la base de datos
+            const URL = 'http://localhost:3000/users'
             
-            // fetch( URL, {
-            //     method: 'POST',
-            //     body: JSON.stringify({
-            //         user: name,
-            //         score: score,
-            //     }),
-            //     headers: {
-            //         "Content-type": "application/json; charset=UTF-8"
-            //     }
-            // })
-            //     .then(response => response.json())
-            //     .then(json => console.log(json))
+            fetch( URL, {
+                method: 'POST',
+                body: JSON.stringify({
+                    user: name,
+                    score: score,
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+                .then(response => response.json())
+                .then(json => console.log(json))
 
             
             scoreDisplay.innerHTML = 'end'

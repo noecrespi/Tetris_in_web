@@ -4,6 +4,11 @@
       "id": 1,
       "user": "noe",
       "score": 20
+    },
+    {
+      "user": "prueba1",
+      "score": 0,
+      "id": 2
     }
   ]
 }
