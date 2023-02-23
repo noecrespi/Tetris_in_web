@@ -111,6 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return grid;
     }
 
+    //dibuja el tetromino
+    function draw() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.add('block')
+            squares[currentPosition + index].style.backgroundImage = colors[random]
+        })
+    }
+
+    //borra el tetromino
+    function undraw() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.remove('block')
+            squares[currentPosition + index].style.backgroundImage = 'none'
+        })
+    }
 
     // Movimiento de los TETROMINOS
     function control(e) {
@@ -127,24 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Controla que la pieza baje cuando se presiona la tecla abajo
     document.addEventListener('keydown', control)
 
-    
-    //draw the shape
-    function draw() {
-        current.forEach(index => {
-            squares[currentPosition + index].classList.add('block')
-            squares[currentPosition + index].style.backgroundImage = colors[random]
-        })
-    }
-
-    //undraw the shape
-    function undraw() {
-        current.forEach(index => {
-            squares[currentPosition + index].classList.remove('block')
-            squares[currentPosition + index].style.backgroundImage = 'none'
-        })
-    }
-
-    //move down on loop
+    //mueve la pieza para abajo
     function moveDown() {
         undraw()
         currentPosition = currentPosition += WIDTH_SQUARE
@@ -152,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         freeze()
     }
 
+    // boton de Inicio y Pausa
     startBtn.addEventListener('click', () => {
         if (timerId) {
             clearInterval(timerId)
@@ -165,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    //move left and prevent collisions with shapes moving left
+    // Mover tetromino a la derecha
     function moveright() {
         undraw()
         const isEdge = current.some(index => (currentPosition + index) % WIDTH_SQUARE === WIDTH_SQUARE - 1)
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         draw()
     }
 
-    //move right and prevent collisions with shapes moving right
+    // Mover tetromino a la izquierda
     function moveleft() {
         undraw()
         const isEdge = current.some(index => (currentPosition + index) % WIDTH_SQUARE === 0)
@@ -187,13 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
         draw()
     }
 
-    //freeze the shape
+    // Bloquea el tetromino
     function freeze() {
-        // if block has settled
+        // si el tetromino toca el fondo o otro tetromino
         if (current.some(index => squares[currentPosition + index + WIDTH_SQUARE].classList.contains('block3') || squares[currentPosition + index + WIDTH_SQUARE].classList.contains('block2'))) {
-            // make it block2
+            // se agrega la clase block2 al tetromino
             current.forEach(index => squares[index + currentPosition].classList.add('block2'))
-            // start a new tetromino falling
+
+            // nuevo tetromino
             random = nextRandom
             nextRandom = Math.floor(Math.random() * TETROMINOS.length)
             current = TETROMINOS[random][nowRotation]
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //show previous tetromino in scoreDisplay
+    // mostrar tetromino anterior 
     const displayWidth = 4
     const displaySquares = document.querySelectorAll('.previous-grid div')
     let displayIndex = 0
