@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Crea el tablero de juego
     function createGrid() {
-        // the main grid
+        // forma del tablero
         let grid = document.querySelector(".grid")
         for (let i = 0; i < GRID_SIZE; i++) {
             let gridElement = document.createElement("div")
             grid.appendChild(gridElement)
         }
 
-        // set base of grid
+        // rellena el tablero
         for (let i = 0; i < GRID_WIDTH; i++) {
             let gridElement = document.createElement("div")
             gridElement.setAttribute("class", "block3")
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let previousGrid = document.querySelector(".previous-grid")
-        // Since 16 is the max grid size in which all the Tetrominoes 
-        // can fit in we create one here
+        // crea el tablero de la siguiente pieza
+        // 16 es el máximo de una pieza
         for (let i = 0; i < 16; i++) {
             let gridElement = document.createElement("div")
             previousGrid.appendChild(gridElement);
