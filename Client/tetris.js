@@ -228,6 +228,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function gameOver() {
         if (current.some(index => squares[currentPosition + index].classList.contains('block2'))) {
             console.log(score)
+
+            // // Añadir el usuario y el puntaje a la base de datos
+            // let name = document.getElementById('name').value
+            // const URL = 'http://localhost:3000/users'
+            
+            // fetch( URL, {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //         user: name,
+            //         score: score,
+            //     }),
+            //     headers: {
+            //         "Content-type": "application/json; charset=UTF-8"
+            //     }
+            // })
+            //     .then(response => response.json())
+            //     .then(json => console.log(json))
+
+            
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerId)
         }
