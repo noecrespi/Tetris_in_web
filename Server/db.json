@@ -14,6 +14,11 @@
       "user": "prueba 2",
       "score": 0,
       "id": 3
+    },
+    {
+      "user": "hola",
+      "score": 20,
+      "id": 4
     }
   ]
 }
