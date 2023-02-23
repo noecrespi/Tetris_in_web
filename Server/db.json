@@ -9,6 +9,11 @@
       "user": "prueba1",
       "score": 0,
       "id": 2
+    },
+    {
+      "user": "prueba 2",
+      "score": 0,
+      "id": 3
     }
   ]
 }
