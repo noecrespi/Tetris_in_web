@@ -1,10 +1,5 @@
-        :root {
-            /*  que hece? */
-            /*  */
-            /* default font size in browsers is 16px = 1em, we make
-     things easier for us and make 10px our base size.
-     We have 10/16 = 0.625 = 1rem as it is set on root element.
-     So 1rem is now 10px throughout our stylesheet.*/
+
+:root {
             font-size: 0.625em;
         }
 
@@ -232,7 +227,7 @@
             cursor: pointer;
         }
 
-        .menu-wrap .hamburger {
+        .menu-wrap .reglasBtn {
             position: absolute;
             top: 0;
             left: 0;
@@ -246,8 +241,8 @@
             justify-content: center;
         }
 
-        /* Hamburger Line */
-        .menu-wrap .hamburger>div {
+        /* reglasBtn Line */
+        .menu-wrap .reglasBtn>div {
             position: relative;
             display: flex;
             width: 150%;
@@ -259,9 +254,9 @@
             transition: all 0.4s ease;
         }
 
-        /* Hamburger Lines - Top & Bottom */
-        .menu-wrap .hamburger>div:before,
-        .menu-wrap .hamburger>div:after {
+        /* reglasBtn Lines - Top & Bottom */
+        .menu-wrap .reglasBtn>div:before,
+        .menu-wrap .reglasBtn>div:after {
             position: absolute;
             top: -7px;
             z-index: 1;
@@ -272,24 +267,24 @@
         }
 
         /* Moves Line Down */
-        .menu-wrap .hamburger>div:after {
+        .menu-wrap .reglasBtn>div:after {
             top: 7px;
         }
 
         /* Toggler Animation */
-        .menu-wrap .toggler:checked+.hamburger>div {
+        .menu-wrap .toggler:checked+.reglasBtn>div {
             transform: rotate(135deg);
         }
 
         /* Turns Lines Into X */
-        .menu-wrap .toggler:checked+.hamburger>div:before,
-        .menu-wrap .toggler:checked+.hamburger>div:after {
+        .menu-wrap .toggler:checked+.reglasBtn>div:before,
+        .menu-wrap .toggler:checked+.reglasBtn>div:after {
             top: 0;
             transform: rotate(90deg);
         }
 
         /* Rotate On Hover When Checked */
-        .menu-wrap .toggler:checked:hover+.hamburger>div {
+        .menu-wrap .toggler:checked:hover+.reglasBtn>div {
             transform: rotate(225deg);
         }
 
